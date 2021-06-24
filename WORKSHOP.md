@@ -191,7 +191,9 @@ are instances of a `CustomResourceDefinition`, to represent our deployments. In 
 
 ```
 $ cd /path/to/gitops-workshop/ansible
-$ ansible-playbook -i inventory participants-deploy.yaml -e kubeconfig=/path/to/kubeconfig -e participant=$YOUR_USERNAME
+$ ansible-playbook -i inventory participants-deploy.yaml \
+  -e kubeconfig=/path/to/kubeconfig \
+  -e participant=$YOUR_USERNAME
 ```
 
 First, let's deploy the application and ci pipeline. You will need to change to the `$YOUR_USERNAME-customresources` directory and use
