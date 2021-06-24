@@ -241,7 +241,9 @@ operation ourselves.
 
 ```
 $ cd /path/to/gitops-workshop/ansible
-$ ansible-playbook -i inventory participants-make-changes.yaml -e kubeconfig=/path/to/kubeconfig -e participant=$YOUR_USERNAME
+$ ansible-playbook -i inventory participants-make-changes.yaml \
+  -e kubeconfig=/path/to/kubeconfig \
+  -e participant=$YOUR_USERNAME
 ```
 
 First let's make a small change, adding a more personalized greeting to the `sample-app-deployment.yaml` manifest. The
