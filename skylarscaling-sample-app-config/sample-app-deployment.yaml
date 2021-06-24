@@ -20,5 +20,5 @@ spec:
           command:
             - '/usr/bin/greet'
           args:
-            - 'Hello skylarscaling\!'
+            - 'Hello beautiful\!'
 ...
