@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: {{ participant }}-sample-app-ci
-  namespace: argocd
+  namespace: openshift-gitops
 spec:
   project: workshop
   source:

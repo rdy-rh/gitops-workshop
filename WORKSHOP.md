@@ -38,19 +38,6 @@ fork the repo to your own GitHub account in order to follow along. To run the wo
 cluster access or provision your own local cluster using [Code Ready Containers](https://code-ready.github.io/crc/) or [Minishift](https://www.okd.io/minishift/) and then run the
 `ansible/playbook.yaml` to configure the necessary workshop components.
 
-*Facilitator's Note*: Once you have a Kubernetes or OpenShift cluster provisioned, take note of the path to your
-`kubeconfig` and execute the following:
-
-```
-$ cd ansible
-$ ansible-playbook -i inventory -c local playbook.yaml -e kubeconfig=/path/to/kubeconfig
-```
-
-> The above command will install the latest releases of the `oc`, `kubectl`, and `argocd` binaries to your `$HOME/bin`,
-> the ArgoCD operator at the cluster-scope, the Tekton operator at the cluster scope, provision an instance of ArgoCD,
-> deploy the `workshop` project in ArgoCD and the `sample-app` and `sample-infra` components within that project.
-
-
 ## What is GitOps?
 
 GitOps is a continuous delivery methodology for applying configuration based on assets stored in a git repository.
@@ -115,7 +102,9 @@ DEMO SAMPLE APP RECONCILIATION
 
 ```
 $ cd ansible
-$ ansible-playbook -i inventory participants-setup.yaml -e kubeconfig=/path/to/kubeconfig -e participant="YOUR_USERNAME"
+$ ansible-playbook -i inventory participants-setup.yaml \
+  -e kubeconfig=/path/to/kubeconfig \
+  -e participant="YOUR_USERNAME"
 ```
 
 > *INSTRUCTION:* Execute the playbook referenced above during the workshop in the interest of time. The steps executed by the
